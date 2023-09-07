@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="containger d-flex justify-content-center align-items-center">
+    <div class="row my-5 p-5 shadow rounded border border-primary w-75">
+        <div class="col">
+            <h3>Add a new car for your container</h3>
+            {% include 'car_form.html' %}
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

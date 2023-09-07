@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+            <form class="row g-3" method="POST">
+                {{ form.hidden_tag() }}
+                <div class="col-md-6">
+                    {{ form.make.label }}
+                    {{form.make(class='form-control mt-2', placeholder = 'Dude')}}
+                    {% for error in form.make.errors %}
+                        <span class="err-msg">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                <div class="col-md-6">
+                    {{ form.model.label }}
+                    {{form.model(class='form-control mt-2', placeholder = 'Weed')}}
+                    {% for error in form.model.errors %}
+                        <span class="err-msg">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                <div class="col-md-6">
+                    {{ form.year.label }}
+                    {{form.year(class='form-control mt-2', placeholder = '42069')}}
+                    {% for error in form.year.errors %}
+                        <span class="err-msg">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                <div class="col-md-6">
+                    {{ form.color.label }}
+                    {{form.color(class='form-control mt-2', placeholder = 'Green')}}
+                    {% for error in form.color.errors %}
+                        <span class="err-msg">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                <div class="col-md-12">
+                    {{ form.image.label }}
+                    {{form.image(class='form-control mt-2')}}
+                </div>
+                <div class="col-12">
+                    {{ form.description.label }}
+                    {{ form.description(class='form-control mt-2', placeholder = 'IPNH' )}}
+                </div>
+                <div class="col-12">
+                    {{ form.price.label }}
+                    {{ form.price(class='form-control mt-2', placeholder = '4.20' )}}
+                    {% for error in form.price.errors %}
+                        <span class="err-msg">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                <div class="col-6">
+                    {{ form.quantity.label }}
+                    {{ form.quantity(class='form-control mt-2', placeholder = '100' )}}
+                    {% for error in form.quantity.errors %}
+                        <span class="err-msg">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                <div class="col-6">
+                    {{ form.submit(class='btn btn-primary') }}
+                </div>
+
+            </form>
+
+{% endblock content %}

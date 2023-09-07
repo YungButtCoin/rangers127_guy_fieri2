@@ -1,0 +1,14 @@
+/* CSS for our Shop page */
+
+
+
+.shop-header {
+    background-image: url('https://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/12/13/0/Guy-Fieri-2011_Guy-FIeri-sitting-in-his-convertible_s4x3.jpg.rend.hgtvcom.616.462.suffix/1371603434168.jpeg');
+    background-size: cover;
+    height: 700px;
+    color: white; 
+}
+
+.shop-stats {
+    color: white; 
+}
