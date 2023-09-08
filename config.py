@@ -1,7 +1,7 @@
 #this is going to be the configuration for our application
 import os #operating system
 from dotenv import load_dotenv #allows us to load environment variables to do certain things with our app
-
+from datetime import timedelta
 
 
 
@@ -25,3 +25,5 @@ class Config():
     SECRET_KEY = os.environ.get('SECRET_KEY') or "Nana nana boo boo, you'll never guess this" #just needs to be present 
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False #hide update messages 
+    JWT_SECRET_KEY = os.environ.get("JWT_SECRET_KEY")
+    JWT_ACCESS_TOKEN_EXPIRES = timedelta(days=365)

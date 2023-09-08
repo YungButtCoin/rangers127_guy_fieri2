@@ -54,7 +54,7 @@ class User(db.Model, UserMixin):
     
 
     def __repr__(self):
-        return f"<USER: {self.username}"
+        return f"<USER: {self.username}>"
 
 class Car(db.Model):
     car_id = db.Column(db.String, primary_key = True)
@@ -98,7 +98,7 @@ class Car(db.Model):
         return self.quantity
     
     def __repr__(self):
-        return f'<car: {self.model}>'
+        return f'<Car: {self.model}>'
     
 
 class Customer(db.Model):
@@ -135,7 +135,7 @@ class carOrder(db.Model):
         return str(uuid.uuid4())
     
     def set_price(self, price, quantity):
-        quantity = int(quantity)
+        quantity = float(quantity)
         price = float(price)
 
         self.price = quantity * price
@@ -166,7 +166,7 @@ class Order(db.Model):
 
         return self.order_total
     
-    def increment_order_total(self, price):
+    def decrement_order_total(self, price):
         self.order_total = float(self.order_total)
         self.order_total -= float(price)
 

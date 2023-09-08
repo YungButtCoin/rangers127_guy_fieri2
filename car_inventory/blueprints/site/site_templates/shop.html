@@ -20,9 +20,9 @@
 {% if current_user.is_authenticated %}
 <div class="row bg-dark p-3 shop-stats">
     <!-- Eventually we will query our database to populate these stats  -->
-    <div class="col d-flex-justify-content-center">Total # of Customers: </div> 
-    <div class="col d-flex-justify-content-center">Total Sales : $</div>
-    <div class="col d-flex-justify-content-center">Total Cars: </div>
+    <div class="col d-flex-justify-content-center">Total # of Customers: {{ stats.customers }}</div> 
+    <div class="col d-flex-justify-content-center">Total Sales : ${{ stats.sales }}</div>
+    <div class="col d-flex-justify-content-center">Total Cars: {{ stats.products }}</div>
 </div>
 <!-- Eventually our cars will show up down here! -->
 {% for car in shop %}
@@ -32,7 +32,7 @@
                 <img src="{{ car.image }}" class="img-fluid rounded" alt="cute plant image">
             </div>
             <div class="card-body d-flex flex-column justify-content-center p-4">
-                <h5 class="card-title">{{ car.name }}</h5>
+                <h5 class="card-title">{{ car.model }}</h5>
                 <p class="card-text">{{ car.description }}</p>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Price: {{ car.price }}</li>
